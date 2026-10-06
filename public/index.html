@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="PipelineX - CI/CD Automation Dashboard powered by Jenkins and Docker">
+
+    <title>PipelineX | CI/CD Automation</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="page-glow glow-one"></div>
+    <div class="page-glow glow-two"></div>
+
+    <header class="navbar">
+        <div class="brand">
+            <div class="brand-mark">
+                <span>PX</span>
+            </div>
+
+            <div class="brand-text">
+                <strong>PipelineX</strong>
+                <small>CI/CD AUTOMATION</small>
+            </div>
+        </div>
+
+        <div class="system-status">
+            <span class="status-dot"></span>
+            <span>System Operational</span>
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero">
+
+            <div class="eyebrow">
+                <span class="eyebrow-dot"></span>
+                DEVOPS AUTOMATION PLATFORM
+            </div>
+
+            <h1>
+                Continuous delivery,
+                <span>engineered for speed.</span>
+            </h1>
+
+            <p class="hero-description">
+                A practical CI/CD implementation that automates the journey
+                from source code to a running Docker container using
+                GitHub, Jenkins and automated testing.
+            </p>
+
+            <div class="pipeline-flow">
+
+                <div class="flow-node active">
+                    <div class="flow-icon">GH</div>
+                    <strong>GitHub</strong>
+                    <small>Source</small>
+                </div>
+
+                <div class="flow-line">
+                    <span></span>
+                </div>
+
+                <div class="flow-node active">
+                    <div class="flow-icon">JK</div>
+                    <strong>Jenkins</strong>
+                    <small>Pipeline</small>
+                </div>
+
+                <div class="flow-line">
+                    <span></span>
+                </div>
+
+                <div class="flow-node active">
+                    <div class="flow-icon">TS</div>
+                    <strong>Jest</strong>
+                    <small>Testing</small>
+                </div>
+
+                <div class="flow-line">
+                    <span></span>
+                </div>
+
+                <div class="flow-node active">
+                    <div class="flow-icon">DK</div>
+                    <strong>Docker</strong>
+                    <small>Deploy</small>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- METRICS -->
+        <section class="metrics">
+
+            <article class="metric-card">
+
+                <div class="metric-top">
+                    <span class="metric-label">BUILD STATUS</span>
+                    <span class="metric-symbol success">?</span>
+                </div>
+
+                <div class="metric-value">SUCCESS</div>
+
+                <div class="metric-bottom">
+                    <span>Jenkins Build</span>
+                    <span class="live">LIVE</span>
+                </div>
+
+            </article>
+
+
+            <article class="metric-card">
+
+                <div class="metric-top">
+                    <span class="metric-label">TEST STATUS</span>
+                    <span class="metric-symbol success">?</span>
+                </div>
+
+                <div class="metric-value">2 PASSED</div>
+
+                <div class="metric-bottom">
+                    <span>Automated Tests</span>
+                    <span class="live">VALIDATED</span>
+                </div>
+
+            </article>
+
+
+            <article class="metric-card">
+
+                <div class="metric-top">
+                    <span class="metric-label">DEPLOYMENT</span>
+                    <span class="metric-symbol running">?</span>
+                </div>
+
+                <div class="metric-value">RUNNING</div>
+
+                <div class="metric-bottom">
+                    <span>Docker Container</span>
+                    <span class="live">ACTIVE</span>
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- PIPELINE -->
+        <section class="section">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-kicker">AUTOMATION</span>
+                    <h2>Live Pipeline</h2>
+                </div>
+
+                <div class="pipeline-badge">
+                    <span></span>
+                    Pipeline Ready
+                </div>
+
+            </div>
+
+
+            <div class="pipeline-card">
+
+                <div class="pipeline-stage completed">
+
+                    <div class="stage-icon">?</div>
+
+                    <div class="stage-content">
+                        <strong>Source</strong>
+                        <span>GitHub Repository</span>
+                    </div>
+
+                    <div class="stage-status">
+                        Completed
+                    </div>
+
+                </div>
+
+
+                <div class="stage-connector"></div>
+
+
+                <div class="pipeline-stage completed">
+
+                    <div class="stage-icon">?</div>
+
+                    <div class="stage-content">
+                        <strong>Build</strong>
+                        <span>Node.js Application</span>
+                    </div>
+
+                    <div class="stage-status">
+                        Completed
+                    </div>
+
+                </div>
+
+
+                <div class="stage-connector"></div>
+
+
+                <div class="pipeline-stage completed">
+
+                    <div class="stage-icon">?</div>
+
+                    <div class="stage-content">
+                        <strong>Test</strong>
+                        <span>Jest Automation</span>
+                    </div>
+
+                    <div class="stage-status">
+                        2 Passed
+                    </div>
+
+                </div>
+
+
+                <div class="stage-connector"></div>
+
+
+                <div class="pipeline-stage completed">
+
+                    <div class="stage-icon">?</div>
+
+                    <div class="stage-content">
+                        <strong>Docker Build</strong>
+                        <span>Container Image</span>
+                    </div>
+
+                    <div class="stage-status">
+                        Created
+                    </div>
+
+                </div>
+
+
+                <div class="stage-connector"></div>
+
+
+                <div class="pipeline-stage running">
+
+                    <div class="stage-icon">
+                        <span class="pulse-ring"></span>
+                        ?
+                    </div>
+
+                    <div class="stage-content">
+                        <strong>Deploy</strong>
+                        <span>Production Container</span>
+                    </div>
+
+                    <div class="stage-status">
+                        Running
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- DEPLOYMENT INFORMATION -->
+        <section class="section">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-kicker">RUNTIME</span>
+                    <h2>Deployment Environment</h2>
+                </div>
+
+            </div>
+
+
+            <div class="deployment-grid">
+
+                <div class="environment-card">
+
+                    <div class="environment-icon">?</div>
+
+                    <div>
+                        <span>CONTAINER</span>
+                        <strong>jenkin-automation-container</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="environment-card">
+
+                    <div class="environment-icon">?</div>
+
+                    <div>
+                        <span>APPLICATION PORT</span>
+                        <strong>3000</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="environment-card">
+
+                    <div class="environment-icon">?</div>
+
+                    <div>
+                        <span>ENVIRONMENT</span>
+                        <strong>Docker / Node.js</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="environment-card">
+
+                    <div class="environment-icon">?</div>
+
+                    <div>
+                        <span>STATUS</span>
+                        <strong class="running-text">Operational</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TECHNOLOGY STACK -->
+        <section class="technology">
+
+            <span class="section-kicker">TECHNOLOGY STACK</span>
+
+            <div class="tech-list">
+
+                <span>GitHub</span>
+                <span>Jenkins</span>
+                <span>Node.js</span>
+                <span>Jest</span>
+                <span>Docker</span>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div>
+            <strong>PipelineX</strong>
+            <span>Jenkins CI/CD Task 02</span>
+        </div>
+
+        <span>
+            Build • Test • Containerize • Deploy
+        </span>
+
+    </footer>
+
+</body>
+</html>

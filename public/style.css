@@ -1,0 +1,991 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #070a12;
+    --panel: rgba(17, 23, 38, 0.72);
+    --border: rgba(255, 255, 255, 0.09);
+    --text: #f4f7ff;
+    --muted: #8d96aa;
+    --soft: #626c82;
+    --blue: #6d7cff;
+    --cyan: #35d5e8;
+    --green: #36d98b;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(
+            circle at 50% -20%,
+            rgba(89, 101, 255, 0.18),
+            transparent 36%
+        ),
+        var(--bg);
+
+    color: var(--text);
+
+    font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+/* --------------------------------
+   BACKGROUND
+-------------------------------- */
+
+.page-glow {
+    position: fixed;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    filter: blur(120px);
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.14;
+}
+
+.glow-one {
+    top: 12%;
+    left: -250px;
+    background: #5965ff;
+}
+
+.glow-two {
+    right: -250px;
+    top: 50%;
+    background: #17cce0;
+}
+
+
+/* --------------------------------
+   NAVBAR
+-------------------------------- */
+
+.navbar {
+    width: min(1180px, 90%);
+    height: 82px;
+
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-mark {
+    width: 40px;
+    height: 40px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6572ff,
+            #27cfe4
+        );
+
+    box-shadow:
+        0 8px 28px rgba(82, 101, 255, 0.25);
+}
+
+.brand-mark span {
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-text strong {
+    font-size: 16px;
+    letter-spacing: -0.3px;
+}
+
+.brand-text small {
+    margin-top: 2px;
+
+    color: var(--soft);
+
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+}
+
+.system-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #9ba4b8;
+
+    font-size: 11px;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--green);
+
+    box-shadow:
+        0 0 0 4px rgba(54, 217, 139, 0.08),
+        0 0 15px rgba(54, 217, 139, 0.7);
+
+    animation: statusPulse 2s infinite;
+}
+
+
+/* --------------------------------
+   HERO
+-------------------------------- */
+
+.hero {
+    width: min(1000px, 90%);
+
+    margin: auto;
+
+    text-align: center;
+
+    padding: 95px 0 70px;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 8px 13px;
+
+    border: 1px solid rgba(108, 124, 255, 0.25);
+
+    border-radius: 100px;
+
+    color: #a9b2ff;
+
+    background: rgba(93, 105, 255, 0.07);
+
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+}
+
+.eyebrow-dot {
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: var(--cyan);
+}
+
+.hero h1 {
+    max-width: 850px;
+
+    margin: 24px auto 22px;
+
+    font-size: clamp(44px, 7vw, 78px);
+
+    line-height: 0.98;
+
+    letter-spacing: -4px;
+}
+
+.hero h1 span {
+    display: block;
+
+    background:
+        linear-gradient(
+            100deg,
+            #8290ff,
+            #36d9e8
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+}
+
+.hero-description {
+    max-width: 650px;
+
+    margin: auto;
+
+    color: var(--muted);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* --------------------------------
+   PIPELINE FLOW
+-------------------------------- */
+
+.pipeline-flow {
+    max-width: 800px;
+
+    margin: 62px auto 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flow-node {
+    min-width: 90px;
+
+    text-align: center;
+
+    animation: fadeUp 0.7s ease both;
+}
+
+.flow-icon {
+    width: 50px;
+    height: 50px;
+
+    margin: auto auto 11px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid rgba(255,255,255,0.11);
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.07),
+            rgba(255,255,255,0.025)
+        );
+
+    color: #b6c0ff;
+
+    font-size: 11px;
+    font-weight: 900;
+
+    box-shadow:
+        inset 0 1px rgba(255,255,255,0.06);
+}
+
+.flow-node.active .flow-icon {
+    border-color: rgba(107,124,255,0.35);
+
+    box-shadow:
+        0 0 25px rgba(89, 104, 255, 0.12);
+}
+
+.flow-node strong {
+    display: block;
+
+    font-size: 11px;
+}
+
+.flow-node small {
+    display: block;
+
+    margin-top: 4px;
+
+    color: var(--soft);
+
+    font-size: 9px;
+}
+
+.flow-line {
+    width: 80px;
+    height: 1px;
+
+    margin: 0 5px;
+
+    position: relative;
+
+    background: rgba(255,255,255,0.1);
+
+    overflow: hidden;
+}
+
+.flow-line span {
+    position: absolute;
+
+    width: 35%;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--cyan),
+            transparent
+        );
+
+    animation: flow 2s linear infinite;
+}
+
+
+/* --------------------------------
+   METRICS
+-------------------------------- */
+
+.metrics {
+    width: min(1180px, 90%);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+.metric-card {
+    padding: 23px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 17px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.055),
+            rgba(255,255,255,0.018)
+        );
+
+    backdrop-filter: blur(18px);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.metric-card:hover {
+    transform: translateY(-3px);
+
+    border-color:
+        rgba(108,124,255,0.28);
+}
+
+.metric-top,
+.metric-bottom {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+.metric-label {
+    color: var(--soft);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+.metric-symbol {
+    font-size: 14px;
+}
+
+.success {
+    color: var(--green);
+}
+
+.running {
+    color: var(--cyan);
+}
+
+.metric-value {
+    margin: 17px 0 15px;
+
+    font-size: 23px;
+
+    font-weight: 800;
+
+    letter-spacing: -0.7px;
+}
+
+.metric-bottom {
+    padding-top: 13px;
+
+    border-top: 1px solid var(--border);
+
+    color: var(--soft);
+
+    font-size: 10px;
+}
+
+.live {
+    color: #78e7ff;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+/* --------------------------------
+   SECTIONS
+-------------------------------- */
+
+.section {
+    width: min(1180px, 90%);
+
+    margin: 85px auto 0;
+}
+
+.section-heading {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    margin-bottom: 20px;
+}
+
+.section-kicker {
+    color: #68748d;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    margin-top: 6px;
+
+    font-size: 25px;
+
+    letter-spacing: -1px;
+}
+
+.pipeline-badge {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 8px 11px;
+
+    border: 1px solid rgba(54,217,139,0.15);
+
+    border-radius: 100px;
+
+    color: #8ea49a;
+
+    background: rgba(54,217,139,0.035);
+
+    font-size: 9px;
+}
+
+.pipeline-badge span {
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: var(--green);
+}
+
+
+/* --------------------------------
+   PIPELINE CARD
+-------------------------------- */
+
+.pipeline-card {
+    padding: 8px 24px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.045),
+            rgba(255,255,255,0.015)
+        );
+
+    backdrop-filter: blur(15px);
+}
+
+.pipeline-stage {
+    min-height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+}
+
+.stage-icon {
+    width: 31px;
+    height: 31px;
+
+    flex: 0 0 31px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 9px;
+
+    background: rgba(54,217,139,0.09);
+
+    border: 1px solid rgba(54,217,139,0.18);
+
+    color: var(--green);
+
+    font-size: 12px;
+
+    position: relative;
+}
+
+.stage-content {
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+.stage-content strong {
+    font-size: 12px;
+}
+
+.stage-content span {
+    color: var(--soft);
+
+    font-size: 10px;
+}
+
+.stage-status {
+    color: #6f7e76;
+
+    font-size: 9px;
+
+    font-weight: 700;
+}
+
+.stage-connector {
+    height: 1px;
+
+    margin-left: 15px;
+
+    background: var(--border);
+}
+
+.pipeline-stage.running .stage-icon {
+    background: rgba(53,213,232,0.08);
+
+    border-color: rgba(53,213,232,0.2);
+
+    color: var(--cyan);
+}
+
+.pipeline-stage.running .stage-status {
+    color: var(--cyan);
+}
+
+.pulse-ring {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 9px;
+
+    border: 1px solid var(--cyan);
+
+    animation: ringPulse 1.8s infinite;
+}
+
+
+/* --------------------------------
+   DEPLOYMENT
+-------------------------------- */
+
+.deployment-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 14px;
+}
+
+.environment-card {
+    min-height: 90px;
+
+    padding: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    background:
+        rgba(255,255,255,0.025);
+}
+
+.environment-icon {
+    width: 38px;
+    height: 38px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 11px;
+
+    color: #93a0ff;
+
+    background: rgba(104,117,255,0.08);
+
+    font-size: 14px;
+}
+
+.environment-card div:last-child {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.environment-card span {
+    color: var(--soft);
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.3px;
+}
+
+.environment-card strong {
+    font-size: 12px;
+
+    font-weight: 700;
+
+    word-break: break-word;
+}
+
+.running-text {
+    color: var(--green);
+}
+
+
+/* --------------------------------
+   TECHNOLOGY
+-------------------------------- */
+
+.technology {
+    width: min(1180px, 90%);
+
+    margin: 85px auto;
+
+    text-align: center;
+}
+
+.tech-list {
+    margin-top: 20px;
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+}
+
+.tech-list span {
+    padding: 9px 14px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 100px;
+
+    color: #8993a9;
+
+    background: rgba(255,255,255,0.025);
+
+    font-size: 10px;
+}
+
+
+/* --------------------------------
+   FOOTER
+-------------------------------- */
+
+footer {
+    width: min(1180px, 90%);
+
+    margin: auto;
+
+    padding: 22px 0 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-top: 1px solid var(--border);
+
+    color: #586276;
+
+    font-size: 9px;
+}
+
+footer div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+footer strong {
+    color: #8d96aa;
+}
+
+
+/* --------------------------------
+   ANIMATIONS
+-------------------------------- */
+
+@keyframes statusPulse {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.45;
+    }
+}
+
+@keyframes flow {
+    from {
+        transform: translateX(-150%);
+    }
+
+    to {
+        transform: translateX(300%);
+    }
+}
+
+@keyframes ringPulse {
+    0% {
+        opacity: 0.8;
+        transform: scale(0.9);
+    }
+
+    70% {
+        opacity: 0;
+        transform: scale(1.45);
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* --------------------------------
+   MOBILE
+-------------------------------- */
+
+@media (max-width: 760px) {
+
+    .navbar {
+        height: 70px;
+    }
+
+    .system-status span:last-child {
+        display: none;
+    }
+
+    .hero {
+        padding: 65px 0 55px;
+    }
+
+    .hero h1 {
+        font-size: clamp(40px, 13vw, 58px);
+
+        letter-spacing: -2.5px;
+    }
+
+    .hero-description {
+        font-size: 13px;
+    }
+
+    .pipeline-flow {
+        margin-top: 48px;
+    }
+
+    .flow-line {
+        width: 25px;
+    }
+
+    .flow-node {
+        min-width: 55px;
+    }
+
+    .flow-icon {
+        width: 42px;
+        height: 42px;
+
+        border-radius: 12px;
+
+        font-size: 9px;
+    }
+
+    .flow-node strong {
+        font-size: 9px;
+    }
+
+    .flow-node small {
+        display: none;
+    }
+
+    .metrics {
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+    }
+
+    .metric-card {
+        padding: 20px;
+    }
+
+    .section {
+        margin-top: 65px;
+    }
+
+    .section-heading {
+        align-items: start;
+
+        gap: 15px;
+    }
+
+    .section-heading h2 {
+        font-size: 21px;
+    }
+
+    .pipeline-badge {
+        margin-top: 5px;
+    }
+
+    .pipeline-card {
+        padding: 5px 16px;
+    }
+
+    .stage-status {
+        display: none;
+    }
+
+    .deployment-grid {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        flex-direction: column;
+
+        gap: 10px;
+
+        text-align: center;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .hero {
+        width: 92%;
+    }
+
+    .pipeline-flow {
+        justify-content: space-between;
+    }
+
+    .flow-line {
+        width: 15px;
+    }
+
+    .flow-node {
+        min-width: 48px;
+    }
+
+    .flow-icon {
+        width: 38px;
+        height: 38px;
+    }
+
+    .pipeline-stage {
+        gap: 12px;
+    }
+}
