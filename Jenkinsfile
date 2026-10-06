@@ -32,7 +32,7 @@ pipeline {
         stage("Docker Build") {
             steps {
                 echo "Building Docker image..."
-                bat "docker build -t %IMAGE_NAME%:latest ."
+                bat "\"C:\\Users\\ASUS\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe\" build -t %IMAGE_NAME%:latest ."
             }
         }
 
@@ -40,9 +40,9 @@ pipeline {
             steps {
                 echo "Deploying Docker container..."
 
-                bat "docker rm -f %CONTAINER_NAME% 2>nul || exit /b 0"
+                bat "\"C:\\Users\\ASUS\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe\" rm -f %CONTAINER_NAME% 2>nul || exit /b 0"
 
-                bat "docker run -d --name %CONTAINER_NAME% -p 3000:3000 %IMAGE_NAME%:latest"
+                bat "\"C:\\Users\\ASUS\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe\" run -d --name %CONTAINER_NAME% -p 3000:3000 %IMAGE_NAME%:latest"
 
                 echo "Deployment completed successfully."
             }
