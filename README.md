@@ -100,5 +100,13 @@
 
 # npm install
 
+## Screenshots
 
+### PipelineX Application
+
+![PipelineX Application](screenshots/application-ui.png)
+
+### Successful Jenkins Pipeline
+
+![Jenkins Successful Pipeline](screenshots/jenkins-successful-pipeline.png)
 
