@@ -18,7 +18,7 @@ pipeline {
         stage("Build") {
             steps {
                 echo "Installing dependencies..."
-                bat "npm.cmd ci"
+                bat "npm.cmd ci --no-audit --no-fund"
             }
         }
 
